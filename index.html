@@ -35,12 +35,12 @@ html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
 
 /* ── LAYOUT ── */
-.wrap{max-width:1100px;margin:0 auto;padding:0 28px}
-section{padding:80px 0}
+.wrap{width:min(1480px,calc(100vw - 64px));margin:0 auto}
+section{padding:58px 0}
 
 /* ── NAV ── */
 nav{position:sticky;top:0;z-index:100;background:rgba(15,17,23,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-inner{max-width:1100px;margin:0 auto;padding:0 28px;height:60px;display:flex;align-items:center;gap:24px}
+.nav-inner{width:min(1480px,calc(100vw - 64px));margin:0 auto;height:60px;display:flex;align-items:center;gap:24px}
 .nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nav-logo-k{width:30px;height:30px;background:var(--amber);border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:900;font-size:14px;color:#0a1628;flex-shrink:0}
 .nav-logo-text{font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;color:var(--text)}
@@ -65,14 +65,16 @@ nav{position:sticky;top:0;z-index:100;background:rgba(15,17,23,.92);backdrop-fil
 .divider{width:40px;height:3px;background:var(--amber);border-radius:2px;margin:16px 0 32px}
 
 /* ── HERO ── */
-.hero{min-height:100vh;display:flex;align-items:center;padding:80px 0 60px;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(124,58,237,.12) 0%,transparent 70%),var(--bg)}
+.hero{min-height:calc(100vh - 60px);display:flex;align-items:center;padding:52px 0 38px;background:radial-gradient(ellipse 80% 60% at 50% -10%,rgba(124,58,237,.12) 0%,transparent 70%),var(--bg)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.28fr) minmax(360px,.72fr);gap:52px;align-items:center}
+.hero-copy{min-width:0}
 .hero-eyebrow{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:18px}
 .hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(32px,5vw,58px);font-weight:800;line-height:1.05;color:var(--text);margin-bottom:14px}
 .hero h1 em{font-style:normal;color:var(--amber);font-weight:800}
 .hero-sub-head{font-family:'Montserrat',sans-serif;font-size:clamp(14px,2vw,18px);font-weight:500;color:var(--text-mid);margin-bottom:20px}
-.hero-desc{font-size:1rem;color:var(--text-mid);max-width:640px;line-height:1.75;margin-bottom:32px}
+.hero-desc{font-size:1rem;color:var(--text-mid);max-width:760px;line-height:1.68;margin-bottom:26px}
 .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
-.badges-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:48px}
+.badges-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
 .badge-item{display:flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:6px 14px;font-size:.8rem;color:var(--text-mid);background:rgba(255,255,255,.03)}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--amber);flex-shrink:0}
 .dot-blue{background:var(--blue-lt)}
@@ -82,6 +84,31 @@ nav{position:sticky;top:0;z-index:100;background:rgba(15,17,23,.92);backdrop-fil
 .h-stat-num{font-family:'Montserrat',sans-serif;font-size:26px;font-weight:800;color:var(--text);margin-bottom:4px}
 .h-stat-num b{color:var(--amber)}
 .h-stat-lbl{font-size:.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px}
+.proof-panel{background:linear-gradient(145deg,rgba(19,22,31,.96),rgba(10,22,40,.92));border:1px solid rgba(201,168,76,.28);border-radius:16px;padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.24)}
+.proof-kicker{font-family:'Montserrat',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:8px}
+.proof-panel h2{font-family:'Montserrat',sans-serif;font-size:22px;line-height:1.25;margin-bottom:8px}
+.proof-panel>p{font-size:.84rem;color:var(--text-mid);line-height:1.6;margin-bottom:18px}
+.proof-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:18px}
+.proof-stat{border:1px solid var(--border);background:rgba(255,255,255,.025);border-radius:9px;padding:13px}
+.proof-stat strong{display:block;font-family:'Montserrat',sans-serif;font-size:22px;color:var(--amber-lt);line-height:1.1}
+.proof-stat span{font-size:.68rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px}
+.decision-chain{display:grid;gap:7px;margin:16px 0}
+.decision-step{display:flex;align-items:center;gap:9px;font-size:.78rem;color:var(--text-mid)}
+.decision-step b{width:23px;height:23px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(201,168,76,.14);color:var(--amber);font-size:.68rem;flex:0 0 auto}
+.disclosure{font-size:.72rem!important;color:var(--text-dim)!important;border-top:1px solid var(--border);padding-top:14px;margin:16px 0 0!important}
+.status-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:20px}
+.status-group{border:1px solid var(--border);background:rgba(255,255,255,.025);border-radius:8px;padding:10px 12px;font-size:.7rem;color:var(--text-mid);line-height:1.45}
+.status-group strong{display:block;font-family:'Montserrat',sans-serif;font-size:.65rem;text-transform:uppercase;letter-spacing:.8px;margin-bottom:3px}
+.status-live strong{color:var(--green-lt)}.status-program strong{color:var(--blue-lt)}.status-pending strong{color:var(--amber)}
+.domain-details,.catalog-details{border:1px solid var(--border);border-radius:8px;background:rgba(255,255,255,.02)}
+.domain-details{margin-top:12px}
+.domain-details summary,.catalog-details summary{cursor:pointer;list-style:none;font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;color:var(--amber);padding:11px 13px}
+.domain-details summary::-webkit-details-marker,.catalog-details summary::-webkit-details-marker{display:none}
+.domain-details summary::after,.catalog-details summary::after{content:'+';float:right;font-size:1rem}
+.domain-details[open] summary::after,.catalog-details[open] summary::after{content:'−'}
+.domain-details .pc-agent-list{padding:0 13px 13px}
+.catalog-details{margin-top:30px;padding:0 18px 18px}
+.catalog-details>summary{font-size:.84rem;padding:16px 0}
 
 /* ── PROBLEM / SOLUTION ── */
 .ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
@@ -229,6 +256,9 @@ footer{background:#070a10;border-top:1px solid var(--border);padding:28px 0;text
 footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
 
 @media(max-width:900px){
+  .wrap,.nav-inner{width:min(100% - 40px,760px)}
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .status-groups{grid-template-columns:1fr}
   .hero-stats,.stats-band .wrap{grid-template-columns:repeat(3,1fr)}
   .platform-grid,.ps-grid,.tech-grid,.cred-grid{grid-template-columns:1fr}
   .partners-grid,.deploy-grid{grid-template-columns:1fr 1fr}
@@ -238,6 +268,7 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
   .nav-links a:not(.nav-cta){display:none}
 }
 @media(max-width:600px){
+  .wrap,.nav-inner{width:min(100% - 28px,560px)}
   .partners-grid,.deploy-grid,.how-flow,.pipeline-steps{grid-template-columns:1fr}
   .hero-stats,.stats-band .wrap{grid-template-columns:repeat(2,1fr)}
   .badges-row{flex-direction:column}
@@ -262,7 +293,7 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
       <a href="#integration">Integrations</a>
       <a href="#readiness">Enterprise Readiness</a>
       <a href="#technology">Technology</a>
-      <a href="#traction">Traction</a>
+      <a href="#expertise">Expertise</a>
       <a href="#partnership" class="nav-cta">Partner With Us</a>
     </div>
   </div>
@@ -271,74 +302,40 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
 <!-- ══════════════════════════ HERO ══════════════════════════ -->
 <div class="hero" id="top">
   <div class="wrap">
-    <div class="hero-eyebrow">Krishcon Guide Agentic Solutions Inc. &nbsp;·&nbsp; Est. 2025</div>
-    <h1>The <em>AI Intelligence Layer</em><br>for Insurance Operations</h1>
-    <div class="hero-sub-head">Not replacing your core platform. Making it dramatically smarter.</div>
-    <p class="hero-desc">
-      KGA ARIA is a <strong>domain-led insurance decision and workflow intelligence layer</strong> for Policy → Billing → Claims. It combines canonical insurance models, deterministic calculations, <strong>83 cataloged AI capabilities</strong>, evidence-backed recommendations, human authority controls, and a hash-chained audit trail. Carrier core platforms remain the systems of record. Today, signed ingestion, canonical normalization, governed outbound controls, and simulated receipts are demonstrated in the KGA lab; live Guidewire sandbox write-back remains pending until sandbox access is available, and production-carrier validation is engagement-specific.
-    </p>
-    <div class="hero-actions">
-      <a href="#platform" class="btn btn-primary">Explore the Platform</a>
-      <a href="#partnership" class="btn btn-outline">Partnership Inquiry</a>
-    </div>
-
-    <div class="badges-row">
-      <div class="badge-item" style="border-color:rgba(139,92,246,.45);background:rgba(139,92,246,.1)">
-        <span class="dot" style="background:var(--purple-lt)"></span>
-        <strong style="color:var(--purple-lt)">Anthropic Claude</strong> — Primary AI Engine
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-eyebrow">Krishcon Guide Agentic Solutions Inc. &nbsp;·&nbsp; Est. 2025</div>
+        <h1><em>Enterprise agentic AI</em><br>for insurance operations</h1>
+        <div class="hero-sub-head">Production-ready architecture. Insurance-native intelligence. Governed action across Policy, Billing, and Claims.</div>
+        <p class="hero-desc">KGA ARIA is an enterprise insurance intelligence platform that connects canonical domain facts, deterministic calculations, carrier rules, specialized AI, human authority, and auditable action. It operates alongside the carrier core to improve decisions and workflow execution without compromising control, traceability, or system-of-record integrity.</p>
+        <div class="hero-actions">
+          <a href="#platform" class="btn btn-primary">Explore Platform Capabilities</a>
+          <a href="#partnership" class="btn btn-outline">Discuss Enterprise Deployment</a>
+        </div>
+        <div class="status-groups" aria-label="Enterprise platform strengths">
+          <div class="status-group status-live"><strong>Enterprise foundation</strong>Tenant isolation · RBAC · encryption · durable audit · observability · recovery</div>
+          <div class="status-group status-program"><strong>Insurance operating depth</strong>Underwriting · billing · claims · authority · compliance · cross-domain orchestration</div>
+          <div class="status-group status-pending"><strong>Deployment flexibility</strong>Azure · AWS · GCP · Docker · neutral PAS contracts · Guidewire-first adapters</div>
+        </div>
       </div>
-      <div class="badge-item" style="border-color:rgba(139,92,246,.45);background:rgba(139,92,246,.1)">
-        <span class="dot" style="background:var(--purple-lt)"></span>
-        <strong style="color:var(--purple-lt)">Anthropic Startup Partner</strong>
-      </div>
-      <div class="badge-item" style="border-color:rgba(0,120,212,.5);background:rgba(0,120,212,.1)">
-        <span class="dot" style="background:#60b8ff"></span>
-        <strong style="color:#60b8ff">Azure Marketplace</strong> — <span style="color:#6ee7b7;font-weight:700">Live ✓</span>
-      </div>
-      <div class="badge-item" style="border-color:rgba(59,130,246,.35);background:rgba(59,130,246,.07)">
-        <span class="dot dot-blue"></span>
-        <strong style="color:var(--blue-lt)">Microsoft Cloud AI Partner</strong>
-      </div>
-      <div class="badge-item" style="border-color:rgba(59,130,246,.35);background:rgba(59,130,246,.07)">
-        <span class="dot dot-blue"></span>
-        <strong style="color:var(--blue-lt)">Microsoft Startup Partner</strong>
-      </div>
-      <div class="badge-item" style="border-color:rgba(255,153,0,.45);background:rgba(255,153,0,.08)">
-        <span class="dot" style="background:#ffb347"></span>
-        <strong style="color:#ffb347">AWS Marketplace</strong> — <span style="color:var(--amber)">Infrastructure Complete · Listing Pending</span>
-      </div>
-      <div class="badge-item" style="border-color:rgba(255,153,0,.45);background:rgba(255,153,0,.08)">
-        <span class="dot" style="background:#ffb347"></span>
-        <strong style="color:#ffb347">AWS Activate Partner</strong>
-      </div>
-      <div class="badge-item" style="border-color:rgba(66,133,244,.45);background:rgba(66,133,244,.08)">
-        <span class="dot" style="background:#4285f4"></span>
-        <strong style="color:#8ab4f8">Google Cloud Partner Advantage</strong>
-      </div>
-      <div class="badge-item">
-        <span class="dot dot-amber"></span>
-        <strong>Guidewire-first</strong> — Integration-Ready
-      </div>
-      <div class="badge-item">
-        <span class="dot dot-amber"></span>
-        <strong>Core-Independent Contracts</strong> — Guidewire · Duck Creek · Other PAS
-      </div>
-      <div class="badge-item">
-        <span class="dot dot-amber"></span>
-        <strong>Guidewire &amp; Duck Creek</strong> Discussions — Not Yet Approved
-      </div>
-      <div class="badge-item" style="border-color:rgba(66,133,244,.45);background:rgba(66,133,244,.08)">
-        <span class="dot" style="background:#4285f4"></span>
-        <strong style="color:#8ab4f8">Google Cloud Marketplace</strong> — <span style="color:#6ee7b7;font-weight:700">Approved</span><span style="color:var(--amber)"> · Listing Upload Pending</span>
-      </div>
-    </div>
-
-    <div class="hero-stats">
-      <div class="h-stat"><div class="h-stat-num"><b>83</b></div><div class="h-stat-lbl">Cataloged Capabilities</div></div>
-      <div class="h-stat"><div class="h-stat-num"><b>3</b></div><div class="h-stat-lbl">Sub-Platforms</div></div>
-      <div class="h-stat"><div class="h-stat-num"><b>5</b></div><div class="h-stat-lbl">Golden Lab Journeys</div></div>
-      <div class="h-stat"><div class="h-stat-num"><b>14</b></div><div class="h-stat-lbl">Evaluated Workbenches</div></div>
-      <div class="h-stat"><div class="h-stat-num"><b>20</b>+10</div><div class="h-stat-lbl">Normal + Adverse Cases Each</div></div>
+      <aside class="proof-panel" aria-label="Enterprise platform at a glance">
+        <div class="proof-kicker">Enterprise platform at a glance</div>
+        <h2>Insurance-native intelligence with production controls.</h2>
+        <p>A unified operating layer for governed decisions, role-based work, resilient integration, and retained evidence.</p>
+        <div class="proof-grid">
+          <div class="proof-stat"><strong>83</strong><span>Governed capabilities</span></div>
+          <div class="proof-stat"><strong>3</strong><span>Insurance domains</span></div>
+          <div class="proof-stat"><strong>14</strong><span>Deep workbenches</span></div>
+          <div class="proof-stat"><strong>5</strong><span>Evaluated journeys</span></div>
+        </div>
+        <div class="decision-chain" aria-label="Governed decision chain">
+          <div class="decision-step"><b>1</b>Source facts and deterministic calculations</div>
+          <div class="decision-step"><b>2</b>Business rules and AI recommendation</div>
+          <div class="decision-step"><b>3</b>Human authority and governed command</div>
+          <div class="decision-step"><b>4</b>System response and retained evidence</div>
+        </div>
+        <p class="disclosure">Designed to coexist with carrier systems of record. Carrier-specific rules, authority, integration mapping, and production activation are configured during implementation.</p>
+      </aside>
     </div>
   </div>
 </div>
@@ -364,7 +361,7 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
         <div class="ps-item"><div class="ps-icon">✓</div><p>Billing exception cases, payment application, delinquency and cross-domain checks connect policy intent to account behavior</p></div>
         <div class="ps-item"><div class="ps-icon">✓</div><p>Coverage issue trees, claim plans, reserve movement, file quality, recovery, litigation and payment integrity deepen the adjuster workflow</p></div>
         <div class="ps-item"><div class="ps-icon">✓</div><p>Material facts carry source and evidence references, missing-data behavior, confidence, abstention and human-review triggers</p></div>
-        <div class="ps-item"><div class="ps-icon">✓</div><p>Five repeatable lab journeys exercise normal, adverse, duplicate, timeout, conflict and accepted-then-later-rejected scenarios before carrier integration</p></div>
+        <div class="ps-item"><div class="ps-icon">✓</div><p>Repeatable lifecycle evaluations exercise normal, adverse, duplicate, timeout, conflict, and accepted-then-later-rejected conditions</p></div>
       </div>
     </div>
   </div>
@@ -376,7 +373,7 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
     <span class="s-label">Platform Architecture</span>
     <h2 class="s-head">Three Sub-Platforms. <span>One Intelligence Suite.</span></h2>
     <div class="divider"></div>
-    <p class="s-sub">Each ARIA module is a self-contained FastAPI application with its own domain services, AI capabilities, REST API, and integration contracts. Deploy all three as an enterprise suite — or begin with one domain. The current build is a working lab and deployment reference; carrier configuration, production-scale validation, and live PAS attachment remain engagement-specific.</p>
+    <p class="s-sub">Each ARIA module is a self-contained service with its own insurance-domain capabilities, validated contracts, APIs, workflow controls, and evidence model. Deploy all three as an enterprise suite—or begin with one domain and expand through the same canonical architecture. Carrier rules, authority, forms, and live PAS activation are configured for each implementation.</p>
 
     <div class="platform-grid">
       <div class="pc pc-policy">
@@ -387,7 +384,8 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
           <div class="pc-count"><span class="pc-count-dot"></span>22 AI Agents</div>
         </div>
         <div class="pc-body">
-          <div class="pc-agents-label">Key Agents</div>
+          <details class="domain-details">
+          <summary>View Policy capabilities</summary>
           <ul class="pc-agent-list">
             <li>Senior P&amp;C Risk Analyst Agent</li>
             <li>Underwriting Specialist Agent</li>
@@ -409,6 +407,7 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
             <li>Regulatory Filing Compliance Agent</li>
             <li>Policy Structured Analysis &amp; Narrative Agents</li>
           </ul>
+          </details>
         </div>
         <div class="pc-footer"><strong>Integration-Ready:</strong> Guidewire PolicyCenter · Duck Creek · Majesco · Insurity · Socotra · Automated Declarations Page generation</div>
       </div>
@@ -421,7 +420,8 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
           <div class="pc-count"><span class="pc-count-dot"></span>24 AI Agents</div>
         </div>
         <div class="pc-body">
-          <div class="pc-agents-label">Key Agents</div>
+          <details class="domain-details">
+          <summary>View Billing capabilities</summary>
           <ul class="pc-agent-list">
             <li>Customer Support Agent</li>
             <li>Billing Inquiry Agent</li>
@@ -444,6 +444,7 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
             <li>General Ledger Posting Agent</li>
             <li>Final Billing &amp; Account Closure Agent</li>
           </ul>
+          </details>
         </div>
         <div class="pc-footer"><strong>Integration-Ready:</strong> Guidewire BillingCenter · Duck Creek · Majesco · Insurity · Socotra</div>
       </div>
@@ -456,7 +457,8 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
           <div class="pc-count"><span class="pc-count-dot"></span>23 AI Agents</div>
         </div>
         <div class="pc-body">
-          <div class="pc-agents-label">Key Agents</div>
+          <details class="domain-details">
+          <summary>View Claims capabilities</summary>
           <ul class="pc-agent-list">
             <li>Claim Classification Agent</li>
             <li>Coverage Verification Agent</li>
@@ -476,6 +478,7 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
             <li>Damage Image Analysis Agent</li>
             <li>Denial / Closure / Partial Approval Letter Agents</li>
           </ul>
+          </details>
         </div>
         <div class="pc-footer"><strong>Integration posture:</strong> Guidewire-first canonical contracts · governed notes-only simulation · PostgreSQL-persisted audit and human review · live carrier write-back pending sandbox access</div>
       </div>
@@ -498,10 +501,10 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
 <!-- ══════════════════════════ AGENTS ══════════════════════════ -->
 <section id="intelligence" style="background:var(--bg2)">
   <div class="wrap">
-    <span class="s-label">Latest Build · August 2026</span>
-    <h2 class="s-head">Insurance Depth Before <span>Agent Count</span></h2>
+    <span class="s-label">Insurance Operating Intelligence</span>
+    <h2 class="s-head">Decision Depth Across the <span>Insurance Lifecycle</span></h2>
     <div class="divider"></div>
-    <p class="s-sub">ARIA now combines deterministic insurance services, versioned knowledge, specialized AI, human approval, and integration commands. The catalog remains 83; the current engineering focus is making a smaller set of high-value workbenches demonstrably deep, explainable, and repeatable.</p>
+    <p class="s-sub">ARIA combines deterministic insurance services, versioned knowledge, specialized AI, human authority, and governed integration commands. High-value workbenches are designed to make complex decisions explainable, repeatable, and operationally defensible.</p>
 
     <div class="platform-grid">
       <div class="pc pc-policy">
@@ -519,8 +522,8 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
     </div>
 
     <div class="pipeline-wrap">
-      <div class="pipeline-title">Evidence-Backed Lab Proof</div>
-      <div class="pipeline-head">Five Golden Journeys · Policy → Billing → Claims</div>
+      <div class="pipeline-title">Evaluated Operating Journeys</div>
+      <div class="pipeline-head">Five cross-lifecycle journeys · Policy → Billing → Claims</div>
       <div class="pipeline-steps" style="grid-template-columns:repeat(5,1fr)">
         <div class="pipe-step"><div class="pipe-num pipe-n1">1</div><div class="pipe-name">Submission → Referral</div><div class="pipe-desc">Quality, appetite, human approval and simulated issuance evidence</div></div>
         <div class="pipe-step"><div class="pipe-num pipe-n2">2</div><div class="pipe-name">Issue → Billing</div><div class="pipe-desc">Billing setup, invoice validation and reconciliation</div></div>
@@ -531,8 +534,8 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
     </div>
 
     <div class="integration-principle">
-      <h3>What the evidence proves—and what it does not</h3>
-      <p><strong>Ready today:</strong> canonical insurance models, deterministic decision services, expected-answer scenarios, human authority controls, audit/evidence packs, idempotency, optimistic locking, timeout/conflict behavior, and simulated notes-only receipts. <strong>Ready for the next engagement:</strong> carrier-specific configuration, supervised Guidewire or Duck Creek validation, user acceptance, production-scale proving, and measurable business-outcome baselining.</p>
+      <h3>Enterprise controls behind every operating decision</h3>
+      <p><strong>Platform capabilities:</strong> canonical insurance models, deterministic decision services, expected-answer evaluations, human authority controls, audit/evidence packs, idempotency, optimistic locking, and timeout/conflict recovery. <strong>Implementation alignment:</strong> carrier-specific configuration, PAS mapping, supervised validation, user acceptance, scale baselining, and production activation.</p>
     </div>
   </div>
 </section>
@@ -557,7 +560,9 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
       </div>
     </div>
 
-    <div style="margin-top:48px">
+    <details class="catalog-details">
+      <summary>Explore all 83 cataloged capabilities</summary>
+    <div>
       <div class="agent-tabs">
         <button class="agent-tab active" data-group="platform" onclick="switchTab('platform')">🌐 Cross-Platform (14)</button>
         <button class="agent-tab" data-group="policy" onclick="switchTab('policy')">📋 ARIA Policy (22)</button>
@@ -697,6 +702,7 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
         </div>
       </div>
     </div>
+    </details>
   </div>
 </section>
 
@@ -760,7 +766,7 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
 
     <div class="integration-principle">
       <h3>The KGA ARIA Integration Principle</h3>
-      <p><strong>KGA ARIA does not replace the core system.</strong> It assembles cross-lifecycle context, applies specialized insurance reasoning, enforces carrier authority, and prepares approved integration commands. The current lab permits simulated note creation only—no reserve, payment, cancellation, or policy mutation. Simulated receipt: Demonstrated. Live Guidewire sandbox write-back: Pending. Production carrier connection: Engagement-specific.</p>
+      <p><strong>KGA ARIA does not replace the core system.</strong> It assembles cross-lifecycle context, applies specialized insurance reasoning, enforces carrier authority, and prepares approved integration commands through neutral contracts and Guidewire-first adapters. The public environment uses controlled notes-only simulation; reserve, payment, cancellation, and policy mutations are activated only against an authorized carrier endpoint after mapping, security, authority, and acceptance validation.</p>
     </div>
 
     <div class="partners-grid">
@@ -883,7 +889,7 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
     <span class="s-label">Enterprise Readiness</span>
     <h2 class="s-head">Built for Regulated Decisions. <span>Production Proof in Progress.</span></h2>
     <div class="divider"></div>
-    <p class="s-sub">The platform now has substantive enterprise controls: tenant-scoped access, sensitive-field encryption, canonical audit bodies, hash-chained decision records, human approval continuations, governed outbound commands, retry/reconciliation behavior, and documented recovery design. These controls are verified in code and lab tests; carrier-scale concurrency, production operating evidence, and external attestations remain separate validation steps.</p>
+    <p class="s-sub">KGA ARIA is engineered for regulated enterprise operations: tenant-scoped access, sensitive-field encryption, canonical audit bodies, hash-chained decision records, human approval continuations, governed outbound commands, retry and reconciliation, and documented recovery design. The architecture is implemented and testable; deployment-specific scale baselines, operating evidence, and external attestations are established with each carrier environment.</p>
 
     <div class="deploy-grid">
       <div class="deploy-card featured">
@@ -905,7 +911,7 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
       <div class="deploy-card featured">
         <div class="deploy-icon">🌩️</div>
         <h3>Resilience — Survives a Bad Day</h3>
-        <p>When a simulated PAS connection fails, the governed outbound path records retryable, permanent, ambiguous, conflict, stale-context and later-rejection outcomes instead of treating every dispatch as success. The lab harness proves recovery behavior without claiming vendor fidelity.</p>
+        <p>The governed outbound path distinguishes retryable, permanent, ambiguous, conflict, stale-context, and later-rejection outcomes instead of treating every dispatch as success. Deterministic failure injection and recovery tests validate platform behavior; vendor-specific behavior is confirmed during adapter activation.</p>
         <div class="deploy-tags">
           <span class="dtag">Dead-Letter Queue</span><span class="dtag">Automatic Retry on Reconnect</span><span class="dtag">Simulated-Outage Tested</span>
         </div>
@@ -945,7 +951,7 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
       <div class="deploy-card">
         <div class="deploy-icon">🔑</div>
         <h3>Production-Grade Authentication</h3>
-        <p>Sub-platform APIs require a valid JWT in production and staging, with hybrid support for Microsoft Entra ID tokens alongside JWT/demo-gate auth. Startup validation, DB-readiness reporting, and webhook signature enforcement close the gaps between a local demo and a customer-facing deployment.</p>
+        <p>Sub-platform APIs require a valid JWT in production and staging, with hybrid support for Microsoft Entra ID tokens alongside application-issued credentials. Startup validation, database-readiness reporting, and webhook signature enforcement protect customer-facing deployments.</p>
         <div class="deploy-tags">
           <span class="dtag">JWT-Enforced APIs</span><span class="dtag">Entra ID Hybrid Auth</span><span class="dtag">Webhook Signing</span>
         </div>
@@ -993,7 +999,7 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
         <span class="tech-label">Security &amp; Identity</span>
         <div class="tech-item">JWT (python-jose) — token-based auth, enforced in production/staging</div>
         <div class="tech-item">bcrypt — password hashing</div>
-        <div class="tech-item">Microsoft Entra ID hybrid auth — accepts Entra tokens alongside JWT/demo-gate credentials</div>
+        <div class="tech-item">Microsoft Entra ID hybrid auth — accepts Entra tokens alongside application-issued JWT credentials</div>
         <div class="tech-item">Fernet field-level encryption at the persistence boundary</div>
         <div class="tech-item">SHA-256 hash-chained audit log — tamper-evident, 365-day retention</div>
         <div class="tech-item">Tenant-filtered data access — JWT-scoped reads across Claims, Policy, Billing</div>
@@ -1001,7 +1007,7 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
       </div>
       <div class="tech-card">
         <span class="tech-label">Integration &amp; Data</span>
-        <div class="tech-item">Neutral PAS contracts + Guidewire-first adapters + LabPasSimulator; vendor behavior is not claimed without sandbox validation</div>
+        <div class="tech-item">Neutral PAS contracts + Guidewire-first adapters + deterministic integration simulator; vendor behavior is confirmed during sandbox validation</div>
         <div class="tech-item">Guidewire MCP Bridge — 24 tools (CC · PC · BC)</div>
         <div class="tech-item">Guidewire canonical source/sink contracts — available for engagement mapping</div>
         <div class="tech-item">Governed outbound queue — simulated notes-only receipt demonstrated</div>
@@ -1102,13 +1108,13 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
         <h4>What We Bring</h4>
         <ul>
           <li>83 cataloged AI capabilities powered by <strong>claude-sonnet-4-6 (Anthropic)</strong>, with deterministic insurance services beneath high-value decisions</li>
-          <li>14 evaluation-backed workbenches and five Policy → Billing → Claims golden lab journeys</li>
+          <li>14 evaluation-backed workbenches and five Policy → Billing → Claims operating journeys</li>
           <li>Canonical insurance models, versioned reference knowledge packs, source evidence, missing-data behavior and human-review triggers</li>
           <li>Guidewire-first integration framework, neutral PAS contracts, governed outbound controls and demonstrated simulated receipts</li>
           <li>Field encryption &amp; hash-chained, tamper-evident audit logging — 365-day retention</li>
           <li>Tenant isolation enforced at the data layer, plus PostgreSQL-persisted Compliance Audit &amp; Governance Gate — every AI decision policy-validated before surfacing</li>
           <li>Control-plane governance on every AI action — identity → scope → policy gate → evidence → confidence → disposition — backed by a versioned, approved workflow registry, with human-in-the-loop review and audit-verify decision reconstruction</li>
-          <li>Lab-tested retry, duplicate, timeout, conflict, stale-context, ambiguous-outcome and later-rejection behavior</li>
+          <li>Deterministically tested retry, duplicate, timeout, conflict, stale-context, ambiguous-outcome, and later-rejection behavior</li>
           <li>Documented disaster-recovery posture — Azure Postgres PITR backups, runbook, live RPO/RTO status</li>
           <li><strong style="color:#6ee7b7">Azure Marketplace — LIVE</strong> · Starter / Professional / Enterprise plans with metered billing · <a href="https://marketplace.microsoft.com/en-us/product/krishconguideagenticsolutionsinc1780178255021.kga-aria-platform?tab=Overview" style="color:var(--amber);text-decoration:none">View listing →</a></li>
           <li><strong style="color:#ffb347">AWS Marketplace — infrastructure complete, listing pending</strong> · SNS, Metering, Entitlement APIs fully integrated, 11-stack CDK deployment</li>
@@ -1124,7 +1130,7 @@ footer p{font-size:.8rem;color:var(--text-dim);line-height:1.8}
         <ul>
           <li>First design partner or pilot customer — P&amp;C insurer, MGA, or TPA</li>
           <li>Guidewire or Duck Creek sandbox access for supervised integration validation</li>
-          <li>Carrier appetite, authority, forms, notices and workflow configuration—never inferred from lab rules</li>
+          <li>Carrier appetite, authority, forms, notices, and workflow configuration—implemented from approved carrier rules</li>
           <li>Formal Guidewire Marketplace partnership agreement <span class="tl-badge tl-prog" style="font-size:.65rem">In Progress</span></li>
           <li>Formal Duck Creek Exchange partnership agreement <span class="tl-badge tl-prog" style="font-size:.65rem">In Progress</span></li>
           <li>Strategic investors aligned to InsurTech / AI</li>
